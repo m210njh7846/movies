@@ -1,0 +1,55 @@
+﻿@model IEnumerable<books.Models.Categrayfilm>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+    <h1>Index</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-success" style="background:green">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImageUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.descrption)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tittle)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (item.ImageUrl != null)
+                        {
+                            <img src="~/upload/@item.ImageUrl" style="width:64px" class="img-thumbnail" />
+
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.descrption)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tittle)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" style="background:blue">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success" style="background:gray">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" style="background:red">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

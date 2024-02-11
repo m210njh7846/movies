@@ -1,0 +1,38 @@
+﻿@model books.Models.Categrayfilm
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container">
+    <h1>Details</h1>
+
+    <div>
+        <h4>Categrayfilm</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ImageUrl)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.descrption)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.descrption)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.tittle)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.tittle)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> <br />
+        <a asp-action="Index" class="btn btn-success" style="background:forestgreen">Back to List</a>
+    </div>
+
+</div>

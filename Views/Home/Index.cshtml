@@ -1,0 +1,26 @@
+﻿    <!-- ======= Featured Services Section ======= -->
+<section id="featured-services" class="featured-services">
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+
+            @model List<Categrayfilm>
+            @foreach (var item in Model)
+            {
+                <div  class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <center>
+                            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+                            <h4 class="title"><a href="">@item.tittle</a></h4>
+                            <img class="image" src="~/upload/@item.ImageUrl" />
+
+                            <p class="description">@item.descrption</p>
+                            <a href="/Home/film/@item.Id">المزيد</a>
+                        </center>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section><!-- End Featured Services Section -->
+

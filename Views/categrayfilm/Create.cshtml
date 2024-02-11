@@ -1,0 +1,46 @@
+﻿@model books.Models.Categrayfilm
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container">
+    <h1>Create</h1>
+
+    <h4>Categrayfilm</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="File" class="control-label"></label>
+                    <input asp-for="File" type="file" class="form-control" />
+                    <span asp-validation-for="File" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="descrption" class="control-label"></label>
+                    <input asp-for="descrption" class="form-control" />
+                    <span asp-validation-for="descrption" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="tittle" class="control-label"></label>
+                    <input asp-for="tittle" class="form-control" />
+                    <span asp-validation-for="tittle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" /><br />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-success" style="background:forestgreen">Back to List</a>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
